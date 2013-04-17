@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<design>
+	<namespaces>
+		<namespace prefix="lsm" uri="library://ns.flex.org/air/lsmanager"/>
+	</namespaces>
+	
+	<categories>
+		<category id="popups" label="lsManager" defaultExpand="true"/>
+	</categories>
+
+	<components>
+	    <component id="org.airlsmanager.views.components.popup.RestorePopup" name="RestorePopup" category="popups" namespace="lsm"/>
+	    <component id="org.airlsmanager.views.components.popup.BackupPopup" name="BackupPopup" category="popups" namespace="lsm"/>
+	    <component id="org.airlsmanager.views.components.popup.BaseProgressPopup" name="BaseProgressPopup" category="popups" namespace="lsm"/>
+	</components>
+</design>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helps version="1.0" format="htm" path="help/">
+	<!-- pop-ups -->
+	<!-- if not added record help's url will be component name by default -->
+ 	<help screenName="BackupPopup" 	/> <!-- url="BackupPopup" by default -->
+	<help screenName="RestorePopup" url="OtherNameRestorePopup"/>
+</helps>

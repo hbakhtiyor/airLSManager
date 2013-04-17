@@ -1,0 +1,18 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace lsm "library://ns.flex.org/air/lsmanager";
+
+lsm|RestorePopup
+{
+	skinClass : ClassReference("org.airlsmanager.views.skins.popup.RestorePopupSkin");	
+}
+
+lsm|BackupPopup
+{
+	skinClass : ClassReference("org.airlsmanager.views.skins.popup.BackupPopupSkin");	
+}
+lsm|BaseProgressPopup
+{
+	skinClass : ClassReference("org.airlsmanager.views.skins.popup.BackupProgressPopupSkin");	
+}

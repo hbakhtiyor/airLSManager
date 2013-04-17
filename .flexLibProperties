@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="org.airlsmanager.Version"/>
+    <classEntry path="org.airlsmanager.consts.BundleNames"/>
+    <classEntry path="org.airlsmanager.consts.LsmNotifications"/>
+    <classEntry path="org.airlsmanager.controllers.BaseCommand"/>
+    <classEntry path="org.airlsmanager.controllers.common.RegisterLsmCommands"/>
+    <classEntry path="org.airlsmanager.controllers.common.RemoveLsmCommands"/>
+    <classEntry path="org.airlsmanager.controllers.help.DisplayHelpContentCommand"/>
+    <classEntry path="org.airlsmanager.controllers.popup.BasePopupCommand"/>
+    <classEntry path="org.airlsmanager.controllers.popup.DisplayBackupPopupCommand"/>
+    <classEntry path="org.airlsmanager.controllers.popup.DisplayBackupProgressPopupCommand"/>
+    <classEntry path="org.airlsmanager.controllers.popup.DisplayRestorePopupCommand"/>
+    <classEntry path="org.airlsmanager.controllers.setting.SetLocalStoreSettings"/>
+    <classEntry path="org.airlsmanager.helpers.ApplicationDescriptor"/>
+    <classEntry path="org.airlsmanager.helpers.ApplicationStorageDirectory"/>
+    <classEntry path="org.airlsmanager.helpers.DateFormat"/>
+    <classEntry path="org.airlsmanager.helpers.DirectoryNormalizer"/>
+    <classEntry path="org.airlsmanager.helpers.HelpUrlResolver"/>
+    <classEntry path="org.airlsmanager.helpers.SharedSettings"/>
+    <classEntry path="org.airlsmanager.models.LocalStoreProxy"/>
+    <classEntry path="org.airlsmanager.models.manager.LocalStoreManagerProxy"/>
+    <classEntry path="org.airlsmanager.models.vo.FileFormatVo"/>
+    <classEntry path="org.airlsmanager.models.vo.SettingVo"/>
+    <classEntry path="org.airlsmanager.validators.DirectoryValidator"/>
+    <classEntry path="org.airlsmanager.views.components.popup.BackupPopup"/>
+    <classEntry path="org.airlsmanager.views.components.popup.BaseProgressPopup"/>
+    <classEntry path="org.airlsmanager.views.components.popup.RestorePopup"/>
+    <classEntry path="org.airlsmanager.views.events.popup.BackupPopupEvent"/>
+    <classEntry path="org.airlsmanager.views.events.popup.PopupEvent"/>
+    <classEntry path="org.airlsmanager.views.events.popup.RestorePopupEvent"/>
+    <classEntry path="org.airlsmanager.views.interfaces.popup.IBackupPopup"/>
+    <classEntry path="org.airlsmanager.views.interfaces.popup.IBaseProgressPopup"/>
+    <classEntry path="org.airlsmanager.views.interfaces.popup.IRestorePopup"/>
+    <classEntry path="org.airlsmanager.views.mediators.popup.BackupPopupMediator"/>
+    <classEntry path="org.airlsmanager.views.mediators.popup.BackupProgressPopupMediator"/>
+    <classEntry path="org.airlsmanager.views.mediators.popup.BasePopupMediator"/>
+    <classEntry path="org.airlsmanager.views.mediators.popup.RestorePopupMediator"/>
+    <classEntry path="org.airlsmanager.views.mediators.window.WindowMediator"/>
+    <classEntry path="org.airlsmanager.views.skins.popup.BackupPopupSkin"/>
+    <classEntry path="org.airlsmanager.views.skins.popup.BackupProgressPopupSkin"/>
+    <classEntry path="org.airlsmanager.views.skins.popup.RestorePopupSkin"/>
+    <classEntry path="org.airlsmanager.views.windows.HelpWindow"/>
+    <classEntry path="org.airlsmanager.views.mediators.popup.BackupPopupMediatorTest"/>
+  </includeClasses>
+  <includeResources>
+    <resourceEntry destPath="design.xml" sourcePath="design.xml"/>
+    <resourceEntry destPath="defaults.css" sourcePath="defaults.css"/>
+  </includeResources>
+  <namespaceManifests>
+    <namespaceManifestEntry manifest="../manifest.xml" namespace="library://ns.flex.org/air/lsmanager"/>
+  </namespaceManifests>
+</flexLibProperties>

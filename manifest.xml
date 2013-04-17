@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<componentPackage>
+    <component id="RestorePopup" class="org.airlsmanager.views.components.popup.RestorePopup"/>
+    <component id="BackupPopup" class="org.airlsmanager.views.components.popup.BackupPopup"/>
+    <component id="BaseProgressPopup" class="org.airlsmanager.views.components.popup.BaseProgressPopup"/>
+</componentPackage>

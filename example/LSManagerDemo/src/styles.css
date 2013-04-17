@@ -1,0 +1,9 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace lsm "library://ns.flex.org/air/lsmanager";
+
+lsm|BackupPopup
+{
+	skinClass : ClassReference("org.airlsmanager.demo.views.skins.popup.OtherBackupPopupSkin");	
+}

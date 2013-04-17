@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2013 Abd ar-Rahman (bakhtiyor.h@gmail.com)
+
+Released under the "MIT" license
+
+See LICENSE.txt for full license information.
+-->
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		height="100%" width="100%" 
+		>
+	<!-- host component -->
+	<fx:Metadata>
+		[HostComponent("org.airlsmanager.views.components.popup.BaseProgressPopup")]
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import org.airlsmanager.consts.BundleNames;
+			import org.airlsmanager.helpers.ApplicationDescriptor;
+		]]>
+	</fx:Script>
+	
+	
+	<!-- custom states -->
+	<s:states>
+		<s:State name="normal"/>
+		<s:State name="disabled" />
+		<s:State name="process"/>
+		<s:State name="error"/>
+		<s:State name="successful"/>
+	</s:states>
+	
+	<s:Group width="450" height="190" horizontalCenter="0" verticalCenter="0"
+			 >
+		<s:RectangularDropShadow id="dropShadow" blurX="20" blurY="20" alpha="0.32" distance="11" 
+								 angle="90" color="0x000000" left="0" top="0" right="0" bottom="0"/>
+		
+		<!--- Defines the appearance of the SkinnableContainer class's background. -->
+		<s:Rect id="background" left="0" right="0" top="0" bottom="0">
+			<s:fill>
+				<!--- @private -->
+				<s:SolidColor id="bgFill" color="#FFFFFF"/>
+			</s:fill>
+		</s:Rect>
+		
+		<!-- title's background -->
+		<s:Rect top="5" left="5" right="5" height="30">
+			<s:fill>
+				<s:LinearGradient rotation="90">
+					<s:GradientEntry color="0xD2D2D2"/>
+					<s:GradientEntry color="0x9A9A9A"/>
+				</s:LinearGradient>
+			</s:fill>
+		</s:Rect>
+		
+		<s:HGroup height="30" 
+				  top="5" left="5" right="5"
+				  paddingLeft="10" paddingRight="10"
+				  verticalAlign="middle"
+				  horizontalAlign="center"
+				  gap="5"
+				  >
+			
+			<!-- title's label -->
+			<s:Label id="titleLabel" 
+					 width="100%" height="100%"
+					 paddingRight="5"
+					 color="#FFFFFF"
+					 fontSize="12" fontWeight="bold"
+					 maxDisplayedLines="1"
+					 textAlign="left" verticalAlign="middle"
+					 text="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'backupProgressPopupTitleLabel')||'Backing Up...'}"
+					 />
+			
+			<!-- help button  -->
+			<s:Button id="helpButton"
+					  height="18" width="18"
+					  buttonMode="true"
+					  label="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'helpButtonLabel')}"
+					  toolTip="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'helpButtonToolTip')||'Get Help'}"
+					  />
+			
+			<!-- close Button  -->
+			<!-- 
+			<s:Button id="closeButton" 
+			height="18" width="18"
+			buttonMode="true"
+			label="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'closeButtonLabel')||'Close'}"
+			toolTip="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'closeButtonToolTip')||'Close'}"
+			/>
+			-->
+		</s:HGroup>
+		
+		<!--
+		Note: setting the minimum size to 0 here so that changes to the host component's
+		size will not be thwarted by this skin part's minimum size.   This is a compromise,
+		more about it here: http://bugs.adobe.com/jira/browse/SDK-21143
+		-->
+		<!--- @copy spark.components.SkinnableContainer#contentGroup -->
+		<s:Group id="contentGroup" left="25" right="25" top="40" bottom="10" minWidth="0" minHeight="0">
+			<s:layout>
+				<s:BasicLayout/>
+			</s:layout>
+			<!-- infomation label -->	 
+			<s:Label id="descriptionLabel" 
+					 left="0" right="0" top="10" height="60" 
+					 color="#4b6570"
+					 fontSize="14"
+					 textAlign="left" verticalAlign="top"
+					 text="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'backupProgressPopupDescriptionLabelText', [ApplicationDescriptor.name])||'Please wait while Application creates a backup file...'}"
+					 />
+			
+			
+			<!-- Label Backup Successful -->
+			<s:Label color="#749601"
+					 fontSize="14" fontWeight="bold"
+					 bottom="40" 
+					 horizontalCenter="0"
+					 includeIn="successful"
+					 text="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'backupSuccessfulLabelText')||'Backup Successful!'}"
+					 />
+			
+			<!-- backup error information -->
+			<s:Label color="#b50000"
+					 fontSize="14" fontWeight="bold"
+					 bottom="40" 
+					 horizontalCenter="0"
+					 includeIn="error"
+					 text="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'backupErrorLabelText')||'Couldn\'t create backup file'}"
+					 />
+			
+			<!-- Backup Progress -->
+			<mx:ProgressBar id="progressBar"  
+							width="360" height="20" 
+							bottom="10" horizontalCenter="0"
+							includeIn="successful,process"
+							mode="manual"
+							label="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'backupProgressLabel')||'Backing Up... %3%%'}"
+							/>
+		</s:Group>
+	</s:Group>
+</s:Skin>

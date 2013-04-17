@@ -1,0 +1,15 @@
+# Build and Release Folders
+bin/
+bin-debug/
+debug/
+bin-release/
+release/
+
+# Other files and folders
+.settings/
+.FlexUnitSettings/
+src/FlexUnitApplication*
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.

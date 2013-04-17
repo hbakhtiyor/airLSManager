@@ -1,0 +1,3 @@
+* Embed locale resources
+* Backup/Restore with chunk stream
+* Using Worker instead Green Thread

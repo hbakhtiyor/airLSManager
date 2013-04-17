@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2013 Abd ar-Rahman (bakhtiyor.h@gmail.com)
+
+Released under the "MIT" license
+
+See LICENSE.txt for full license information.
+-->
+<s:Window xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark"
+		  xmlns:mx="library://ns.adobe.com/flex/mx" 
+		  title="{resourceManager.getString(BundleNames.AIR_LSMANAGER, 'helpWindowTitle') || 'Help'}"
+		  systemChrome="none"
+		  width="900" height="700"
+		  minWidth="300" minHeight="200"
+		  skinClass="spark.skins.spark.SparkChromeWindowedApplicationSkin"
+		  >
+	
+	<fx:Script>
+		<![CDATA[
+			import org.airlsmanager.consts.BundleNames;
+			
+			//--------------------------------------------------------------------------
+			//
+			//  Constants
+			//
+			//--------------------------------------------------------------------------
+			/**
+			 *  Default web page
+			 */				
+			private const DEFAULT_PAGE:String = "https://www.github.com";
+			
+			
+			//--------------------------------------------------------------------------
+			//
+			//  Properties
+			//
+			//--------------------------------------------------------------------------
+			
+			//----------------------------------
+			//  url
+			//----------------------------------
+			/**
+			 *  @private
+			 */				
+			private var _url:String = DEFAULT_PAGE;
+						
+			[Bindable]
+			public function set url(value:String):void
+			{
+				_url = value;
+				if(helpContent  && helpContent.location == value)
+					helpContent.reload();
+				
+				if(_url != DEFAULT_PAGE)
+				{
+					var loader:URLLoader = new URLLoader();
+					loader.addEventListener(IOErrorEvent.IO_ERROR, ioErrorEventHandler);
+					loader.load(new URLRequest(_url));
+				}
+			}
+			
+			/**
+			 *  @private
+			 */				
+			public function get url():String
+			{
+				return _url;
+			}
+			
+			
+			//--------------------------------------------------------------------------
+			//
+			//  Event handlers
+			//
+			//--------------------------------------------------------------------------
+			/**
+			 * Handler for <code>IOErrorEvent.IO_ERROR</code> event dispatched by <code>URLLoader</code>.
+			 */				
+			private function ioErrorEventHandler(event:IOErrorEvent):void
+			{
+				event.target.removeEventListener(IOErrorEvent.IO_ERROR, ioErrorEventHandler);
+				url = DEFAULT_PAGE;
+			}		
+		]]>
+	</fx:Script>
+	
+	<mx:HTML id="helpContent" location="{url}" width="100%" height="100%" 
+			 paddingLeft="5" 
+			 paddingRight="5"
+			 paddingTop="5"
+			 paddingBottom="5"
+			 verticalScrollPolicy="auto"
+			 horizontalScrollPolicy="auto"
+			 />
+</s:Window>
